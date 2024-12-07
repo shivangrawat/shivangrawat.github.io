@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f5f5f5;
+}
+
+header {
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.paper-title {
+    font-family: 'Merriweather', serif;
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+}
+
+.authors, .affiliations {
+    margin: 0.2em 0;
+    font-style: italic;
+}
+
+.links {
+    margin-top: 20px;
+}
+
+.links button {
+    margin: 5px;
+    padding: 10px 15px;
+    font-size: 0.9em;
+    border: none;
+    border-radius: 5px;
+    background: #007acc;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.links button:hover {
+    background: #005b99;
+}
+
+main {
+    max-width: 800px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+main h2 {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    font-size: 1.5em;
+}
+
+.representative-image img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.tl-dr, .abstract, .introduction, .results, .citation {
+    margin-bottom: 2em;
+}
+
+.citation pre {
+    background: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 0.9em;
+}
+
+footer {
+    text-align: center;
+    font-size: 0.8em;
+    color: #666;
+    margin: 20px 0;
+}
+
+@media (max-width: 600px) {
+    header, main, footer {
+        padding: 10px;
+    }
+    .paper-title {
+        font-size: 1.5em;
+    }
+}
