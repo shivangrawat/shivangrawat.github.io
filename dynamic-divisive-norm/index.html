@@ -22,15 +22,17 @@
 
 <body>
     <header>
-        <h1 class="paper-title">Unconditional stability of a recurrent neural circuit implementing divisive normalization</h1>
+        <h1 class="paper-title">Unconditional stability of a recurrent neural circuit implementing divisive
+            normalization</h1>
         <p class="conference"><strong>NeurIPS 2024</strong></p>
         <p class="authors">
-            <strong>Authors:</strong> 
-            <a href="https://www.linkedin.com/in/shivang-rawat-b54b6a151/" target="_blank" class="author-link">Shivang Rawat</a>, 
+            <strong>Authors:</strong>
+            <a href="https://www.linkedin.com/in/shivang-rawat-b54b6a151/" target="_blank" class="author-link">Shivang
+                Rawat</a>,
             David J. Heeger and Stefano Martiniani
         </p>
         <p class="affiliations"><em>New York University</em></p>
-    
+
         <div class="links">
             <button class="pdf-button" onclick="window.open('https://openreview.net/pdf?id=5lLb7aXRN9','_blank')">
                 <img src="figures/pdf_logo.png" alt="GitHub" />
@@ -38,16 +40,18 @@
             <button class="arxiv-button" onclick="window.open('https://arxiv.org/abs/2409.18946','_blank')">
                 <img src="figures/arxiv.jpg" alt="ArXiv" />
             </button>
-            <button class="github-button" onclick="window.open('https://github.com/martiniani-lab/dynamic-divisive-norm','_blank')">
+            <button class="github-button"
+                onclick="window.open('https://github.com/martiniani-lab/dynamic-divisive-norm','_blank')">
                 <img src="figures/GitHub_Logo.png" alt="GitHub" />
             </button>
-            <button class="poster-button" onclick="window.open('https://shivangrawat.github.io/dynamic-divisive-norm/figures/neurips_poster.png','_blank')">
+            <button class="poster-button"
+                onclick="window.open('https://shivangrawat.github.io/dynamic-divisive-norm/figures/neurips_poster.png','_blank')">
                 <img src="figures/poster_logo.png" alt="Poster" />
             </button>
         </div>
     </header>
-    
-    
+
+
 
     <main>
         <section class="representative-image">
@@ -89,13 +93,16 @@
 
         <section class="introduction" id="introduction">
             <h2>Introduction</h2>
-            <p>Recurrent neural networks are powerful tools for modeling sequential data, yet their lack of biological
-                plausibility and complex training dynamics have limited their interpretability. Biological circuits, on
-                the other hand, offer rich insights into stability and adaptability but are often difficult to train
-                directly due to complex nonlinear interactions. Our work aims to unify these perspectives by
-                incorporating
-                dynamic divisive normalization into a recurrent circuit model, yielding unconditional stability that
-                simplifies both theoretical analysis and practical training.</p>
+            <p>Our work explores how a biologically-inspired recurrent neural network (RNN) architecture, known as an
+                Oscillatory Recurrent Gated Neural Integrator Circuits (ORGaNICs), can achieve guaranteed stability while
+                implementing divisive normalization—a core computation observed throughout the brain’s sensory
+                processing circuits. Unlike conventional RNNs, where normalization techniques are often added as ad hoc
+                “patches” lacking conceptual grounding, ORGaNICs include a built-in normalization mechanism that ensures
+                stable and robust activity dynamics, regardless of the network’s size or parameter settings. This
+                stability, proven mathematically, opens the door to training these models directly on challenging
+                sequence tasks via standard backpropagation methods, without the need for tricky workarounds. By
+                bridging the gap between biological plausibility and machine learning performance, ORGaNICs offer a
+                fresh perspective on building stable, trainable, and conceptually grounded neural architectures.</p>
         </section>
 
         <section class="results" id="results">
