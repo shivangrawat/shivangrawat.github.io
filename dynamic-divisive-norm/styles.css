@@ -41,7 +41,7 @@ header {
 .links {
     margin-top: 20px;
     display: flex;
-    gap: 10px;
+    gap: 15px;
     justify-content: center;
 }
 
@@ -49,12 +49,12 @@ header {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0; /* Remove padding to fit image size */
+    padding: 0; /* Remove padding for image-only buttons */
     border: none;
     border-radius: 5px;
     cursor: pointer;
     background: none; /* Remove default button background */
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
 .links button:hover {
@@ -63,7 +63,7 @@ header {
 
 /* ArXiv Button */
 .arxiv-button img {
-    width: 50px; /* Set appropriate width for the logo */
+    width: 70px; /* Bigger size for the logo */
     height: auto;
     border-radius: 5px;
     object-fit: contain;
@@ -71,27 +71,33 @@ header {
 
 /* GitHub Button */
 .github-button img {
-    width: 50px; /* Set appropriate width for the logo */
+    width: 70px; /* Bigger size for the logo */
     height: auto;
     border-radius: 5px;
     object-fit: contain;
 }
 
-/* Poster Button (text-based) */
+/* Poster Button */
 .poster-button {
-    padding: 10px 20px;
-    font-size: 0.9em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+    font-size: 1em;
     font-weight: bold;
     color: #fff;
-    background: #444444;
+    background: #000; /* Always black background */
     border-radius: 5px;
     border: none;
-    transition: background-color 0.3s ease;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
 .poster-button:hover {
-    background: #5a5a5a;
+    background: #444; /* Slightly lighter black on hover */
+    transform: translateY(-2px);
 }
+
 
 
 /* Navigation Bar */
