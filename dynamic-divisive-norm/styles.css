@@ -73,6 +73,18 @@ header {
     transform: translateY(-2px);
 }
 
+/* pdf Button */
+.pdf-button img {
+    width: 50px; /* Bigger size for the logo */
+    height: auto;
+    border-radius: 5px;
+    object-fit: contain;
+}
+
+.pdf-button:hover {
+    transform: translateY(-2px);
+}
+
 /* ArXiv Button */
 .arxiv-button img {
     width: 100px; /* Bigger size for the logo */
