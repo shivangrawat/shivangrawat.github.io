@@ -23,8 +23,15 @@ header {
     line-height: 1.2;
 }
 
-.authors, .affiliations {
+.authors {
     margin: 0.2em 0;
+    font-weight: italic;
+}
+
+
+.affiliations {
+    margin: 0.2em 0;
+    font-weight: normal;
 }
 
 .author-link {
@@ -178,6 +185,22 @@ main h2 {
     color: #666;
     margin-top: 0.5em;
 }
+
+.model-description figure {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.model-description img {
+    display: block;
+    max-width: 40%; /* Ensures it scales responsively */
+    height: auto; /* Maintains aspect ratio */
+    margin: 0 auto;
+    border: none; /* Optional: Adds a border */
+    outline: none; /* Removes any outline */
+    box-shadow: none; /* Removes any shadow effect */
+}
+
 
 .tl-dr, .abstract, .introduction, .model-description, .stability, .results, .discussion, .citation {
     margin-bottom: 2em;
