@@ -112,8 +112,7 @@
         <section class="model-description" id="model-description">
             <h2>ORGaNICs</h2>
             <p>
-                In its simplest form, the two-neuron-types ORGaNICs model
-                <cite>[Heeger 2019, Heeger 2020]</cite> with \(n\) neurons of each type can be written as,
+                The two-neuron-types ORGaNICs model with \(n\) neurons of each type can be written as,
             </p>
             <p>
                 \[
@@ -141,20 +140,7 @@
             <p>
                 The firing rates, \(\mathbf{y}^\pm = \lfloor\pm\mathbf{y}\rfloor^2\) and
                 \(\mathbf{a}^+ = \sqrt{\lfloor\mathbf{a}\rfloor}\), are rectified (\(\lfloor .\rfloor\)) power
-                functions of the underlying membrane potentials. For the derivation of a general model with
-                arbitrary power-law exponents, including the Eq.~(1), see Appendix A. Note that the term
-                \(\sqrt{\mathbf{y}^+} - \sqrt{\mathbf{y}^-}\) serves the purpose of defining a mechanism for
-                reconstructing the membrane potential (which can be negative, depending on the sign of the input)
-                from the firing rates \(\mathbf{y}^\pm\) that are strictly nonnegative. \(\mathbf{y}^+\) and
-                \(\mathbf{y}^-\) are the firing rates of neurons with complementary receptive fields such that
-                they encode inputs with positive and negative signs, respectively. Note that only one of these
-                neurons fires at a given time. In ORGaNICs, these neurons have a single dynamical equation for
-                their membrane potentials, where the sign of \(\mathbf{y}\) indicates which neuron is active.
-                Neurons with such complementary (anti-phase) receptive fields are found adjacent to each other
-                in the visual cortex <cite>[Liu 1992]</cite>, and we hypothesize that such complementary neurons
-                are ubiquitous throughout the neocortex.
-            </p>
-            <p>
+                functions of the underlying membrane potentials. 
                 \(\mathbf{b} \in {\mathbb{R}^+_*}^n\) and \(\mathbf{b}_0 \in {\mathbb{R}^+_*}^n\) are the input gains
                 for the external inputs \(\mathbf{z}\) and \(\boldsymbol{\sigma}\) fed to neurons \(\mathbf{y}\)
                 and \(\mathbf{a}\), respectively. \({\mathbb{R}^+_*}\) is the set of positive real numbers,
@@ -164,6 +150,17 @@
                 \(\boldsymbol{\tau}_a \in {\mathbb{R}^+_*}^n\) represent the time constants of \(\mathbf{y}\) and
                 \(\mathbf{a}\) neurons.
             </p>
+        </section>
+
+        <section class="stability" id="stability">
+            <h2>Stability of ORGaNICs</h2>
+            <p>We empirically validate the unconditional stability property of the ORGaNICs framework by testing it on a
+                range of tasks, including static image classification and sequential MNIST. The model not only avoids
+                exploding and vanishing gradients, but also achieves competitive performance with LSTMs on sequential
+                tasks. Visualizations of the circuit’s energy function demonstrate how the model maintains stable
+                attractors, offering interpretable dynamics that align with biological principles. Additional figures
+                and
+                benchmarks can be accessed via the links provided above.</p>
         </section>
 
         <section class="results" id="results">
