@@ -4,9 +4,10 @@ body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     color: #333;
-    background: #f5f5f5;
+    background: linear-gradient(to bottom, #fafafa, #e9ecef);
 }
 
+/* Header */
 header {
     text-align: center;
     background: #fff;
@@ -41,12 +42,47 @@ header {
     color: #fff;
     cursor: pointer;
     transition: background 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .links button:hover {
     background: #005b99;
 }
 
+.links button i {
+    margin-right: 8px;
+}
+
+/* Navigation Bar */
+nav {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #007acc;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #005b99;
+}
+
+/* Main Content */
 main {
     max-width: 800px;
     margin: 40px auto;
@@ -63,6 +99,11 @@ main h2 {
     font-size: 1.5em;
 }
 
+.representative-image figure {
+    text-align: center;
+    margin: 0;
+}
+
 .representative-image img {
     display: block;
     max-width: 100%;
@@ -70,6 +111,12 @@ main h2 {
     margin: 0 auto;
     border: 1px solid #ddd;
     border-radius: 5px;
+}
+
+.representative-image figcaption {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 0.5em;
 }
 
 .tl-dr, .abstract, .introduction, .results, .citation {
@@ -84,6 +131,7 @@ main h2 {
     font-size: 0.9em;
 }
 
+/* Footer */
 footer {
     text-align: center;
     font-size: 0.8em;
@@ -91,11 +139,16 @@ footer {
     margin: 20px 0;
 }
 
+/* Responsive Design */
 @media (max-width: 600px) {
-    header, main, footer {
+    header, main, footer, nav ul {
         padding: 10px;
     }
     .paper-title {
         font-size: 1.5em;
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
     }
 }

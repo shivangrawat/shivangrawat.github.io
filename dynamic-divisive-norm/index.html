@@ -1,100 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Dynamic Divisive Normalization - NeurIPS</title>
 
-    <!-- Link to external CSS -->
-    <link rel="stylesheet" href="styles.css" />
-
-    <!-- Google Fonts (Example) -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@700&display=swap"
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@700&display=swap" 
         rel="stylesheet">
 
-</head>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" 
+          integrity="sha512-Fo3rlrZj/k7ujTTX5nH6xuthiyU9E9QeNwwiofXf9La7R5LsCpQ9Ong8/PbOrfLtb/yGT+BY3+Aqdv7WEVPVkQ==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css" />
+</head>
 <body>
     <header>
-        <h1 class="paper-title">Unconditional stability of a recurrent neural circuit implementing divisive normalization        </h1>
+        <h1 class="paper-title">Unconditional stability of a recurrent neural circuit implementing divisive normalization</h1>
         <p class="authors"><strong>Authors:</strong> Shivang Rawat, David J. Heeger, Stefano Martiniani</p>
         <p class="affiliations"><em>New York University</em></p>
 
         <div class="links">
-            <button onclick="window.open('https://arxiv.org/abs/2409.18946','_blank')">ArXiv</button>
-            <button
-                onclick="window.open('https://github.com/martiniani-lab/dynamic-divisive-norm','_blank')">GitHub</button>
-            <button onclick="window.open('https://shivangrawat.github.io/dynamic-divisive-norm/figures/neurips_poster.png','_blank')">Poster</button>
+            <button onclick="window.open('https://arxiv.org/abs/2409.18946','_blank')">
+                <i class="fas fa-book-open"></i> ArXiv
+            </button>
+            <button onclick="window.open('https://github.com/martiniani-lab/dynamic-divisive-norm','_blank')">
+                <i class="fab fa-github"></i> GitHub
+            </button>
+            <button onclick="window.open('https://shivangrawat.github.io/dynamic-divisive-norm/figures/neurips_poster.png','_blank')">
+                <i class="fas fa-image"></i> Poster
+            </button>
         </div>
     </header>
 
+    <nav>
+        <ul>
+            <li><a href="#abstract">Abstract</a></li>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#results">Results</a></li>
+            <li><a href="#citation">Citation</a></li>
+        </ul>
+    </nav>
+
     <main>
-        <section class="">
-            <img src="img/paper_image.png" alt="Representative figure of the model" />
+        <section class="representative-image">
+            <figure>
+                <img src="img/paper_image.png" alt="Representative figure of the model" />
+                <figcaption>Figure 1: A conceptual overview of the dynamic divisive normalization model.</figcaption>
+            </figure>
         </section>
 
         <section class="tl-dr">
             <h2>TL;DR</h2>
-            <p>We introduce a principled approach of adding normalization in Recurrent Neural Networks (RNNs). This
-                leads to a surprising property of unconditional (independent of model parameters and input) dynamical
-                stability of the dynamical system corresponding to the RNN.</p>
+            <p>We introduce a principled approach of adding normalization in Recurrent Neural Networks (RNNs). This leads
+                to unconditional dynamical stability of the system, simplifying training and analysis.</p>
         </section>
 
-        <section class="abstract">
+        <section class="abstract" id="abstract">
             <h2>Abstract</h2>
             <p>Stability in recurrent neural models poses a significant challenge, particularly in developing
-                biologically plausible neurodynamical models that can be seamlessly trained. Traditional cortical
-                circuit models are notoriously difficult to train due to expansive nonlinearities in the dynamical
-                system, leading to an optimization problem with nonlinear stability constraints that are difficult to
-                impose. Conversely, recurrent neural networks (RNNs) excel in tasks involving sequential data but lack
-                biological plausibility and interpretability. In this work, we address these challenges by linking
-                dynamic divisive normalization (DN) to the stability of ORGaNICs, a biologically plausible recurrent
-                cortical circuit model that dynamically achieves DN and that has been shown to simulate a wide range of
-                neurophysiological phenomena. By using the indirect method of Lyapunov, we prove the remarkable property
-                of unconditional local stability for an arbitrary-dimensional ORGaNICs circuit when the recurrent weight
-                matrix is the identity. We thus connect ORGaNICs to a system of coupled damped harmonic oscillators,
-                which enables us to derive the circuit's energy function, providing a normative principle of what the
-                circuit, and individual neurons, aim to accomplish. Further, for a generic recurrent weight matrix, we
-                prove the stability of the 2D model and demonstrate empirically that stability holds in higher
-                dimensions. Finally, we show that ORGaNICs can be trained by backpropagation through time without
-                gradient clipping/scaling, thanks to its intrinsic stability property and adaptive time constants, which
-                address the problems of exploding, vanishing, and oscillating gradients. By evaluating the model's
-                performance on RNN benchmarks, we find that ORGaNICs outperform alternative neurodynamical models on
-                static image classification tasks and perform comparably to LSTMs on sequential tasks.</p>
+                biologically plausible neurodynamical models that can be seamlessly trained. Traditional cortical circuit
+                models are notoriously difficult to train due to expansive nonlinearities in the dynamical system,
+                leading to optimization problems that are challenging to solve. Conversely, RNNs excel at sequential
+                tasks but lack biological plausibility. We bridge these gaps by linking dynamic divisive normalization
+                (DN) to the stability of ORGaNICs, a biologically plausible recurrent cortical circuit model.
+                Using Lyapunov analysis, we show that unconditional local stability arises naturally. This provides a
+                normative principle for the circuit’s function and enables simpler training without gradient instability
+                issues. Our experiments show that ORGaNICs outperform other neurodynamical models on static tasks and
+                rival LSTMs on sequential tasks.</p>
         </section>
 
-        <section class="introduction">
+        <section class="introduction" id="introduction">
             <h2>Introduction</h2>
-            <p>Write a brief introduction that provides context and motivation for your work. You can summarize the
-                problem, the approach, and the gap your paper fills.</p>
+            <p>Recurrent neural networks are powerful tools for modeling sequential data, yet their lack of biological
+                plausibility and complex training dynamics have limited their interpretability. Biological circuits, on
+                the other hand, offer rich insights into stability and adaptability but are often difficult to train
+                directly due to complex nonlinear interactions. Our work aims to unify these perspectives by incorporating
+                dynamic divisive normalization into a recurrent circuit model, yielding unconditional stability that
+                simplifies both theoretical analysis and practical training.</p>
         </section>
 
-        <section class="results">
+        <section class="results" id="results">
             <h2>Results</h2>
-            <p>Summarize key results with concise text, possibly highlighting numerical improvements and linking to more
-                detailed explanations. Insert plots or images if needed.</p>
+            <p>We empirically validate the unconditional stability property of the ORGaNICs framework by testing it on a
+                range of tasks, including static image classification and sequential MNIST. The model not only avoids
+                exploding and vanishing gradients, but also achieves competitive performance with LSTMs on sequential
+                tasks. Visualizations of the circuit’s energy function demonstrate how the model maintains stable
+                attractors, offering interpretable dynamics that align with biological principles. Additional figures and
+                benchmarks can be accessed via the links provided above.</p>
         </section>
 
-        <section class="citation">
+        <section class="citation" id="citation">
             <h2>BibTeX Citation</h2>
             <pre>
-                @article{rawat2024unconditional,
-                    title={Unconditional stability of a recurrent neural circuit implementing divisive normalization},
-                    author={Rawat, Shivang and Heeger, David J and Martiniani, Stefano},
-                    journal={arXiv preprint arXiv:2409.18946},
-                    year={2024}
-                  }
+@article{rawat2024unconditional,
+  title={Unconditional stability of a recurrent neural circuit implementing divisive normalization},
+  author={Rawat, Shivang and Heeger, David J and Martiniani, Stefano},
+  journal={arXiv preprint arXiv:2409.18946},
+  year={2024}
+}
+            </pre>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Shivang Rawat </p>
+        <p>&copy; 2024 Shivang Rawat. This site is hosted on GitHub Pages.</p>
     </footer>
 
-    <!-- Link to external JS -->
     <script src="script.js"></script>
 </body>
 </html>
