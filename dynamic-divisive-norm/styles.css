@@ -28,32 +28,65 @@ header {
     font-style: italic;
 }
 
+.conference {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #007acc;
+    margin: 10px 0;
+    text-align: center;
+}
+
 .links {
     margin-top: 20px;
 }
 
 .links button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     margin: 5px;
     padding: 10px 15px;
     font-size: 0.9em;
+    font-weight: bold;
     border: none;
     border-radius: 5px;
     background: #007acc;
     color: #fff;
     cursor: pointer;
     transition: background 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .links button:hover {
     background: #005b99;
 }
 
-.links button i {
+.links button .icon {
+    width: 18px;
+    height: 18px;
     margin-right: 8px;
 }
+
+.links button i {
+    margin-right: 8px;
+    font-size: 1.2em;
+}
+
+.links button:nth-child(1) {
+    background: #ff6600; /* ArXiv orange */
+}
+
+.links button:nth-child(1):hover {
+    background: #cc5200;
+}
+
+.links button:nth-child(3) {
+    background: #333; /* Black for poster */
+}
+
+.links button:nth-child(3):hover {
+    background: #555;
+}
+
 
 /* Navigation Bar */
 nav {
@@ -109,8 +142,9 @@ main h2 {
     max-width: 100%;
     height: auto;
     margin: 0 auto;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    border: none; /* Ensures no border appears */
+    outline: none; /* Removes any outline */
+    box-shadow: none; /* Removes any shadow effect */
 }
 
 .representative-image figcaption {
