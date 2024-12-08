@@ -18,7 +18,11 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="styles.css" />
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js">
+    </script>
 </head>
+
 
 <body>
     <header>
@@ -50,7 +54,6 @@
             </button>
         </div>
     </header>
-
 
 
     <main>
@@ -107,14 +110,56 @@
 
         <section class="model-description" id="model-description">
             <h2>ORGaNICs</h2>
-            <p>The ORGaNICs model combines excitatory and inhibitory neurons arranged to implement dynamic divisive
-                normalization. Each pair of complementary neurons encodes positive and negative stimulus components, and
-                their steady-state responses approximate the divisive normalization equation. Through carefully designed
-                recurrent connections and gain terms, this model ensures that stable, biologically plausible dynamics
-                emerge without the need for ad hoc normalization patches. In essence, ORGaNICs inherently perform
-                normalization and attention-like gating as part of their fundamental operating principles.</p>
-            <p class="equation">
-                $$\mathbf{y}^+_s $$
+            <p>
+                In its simplest form, the two-neuron-types ORGaNICs model 
+                <cite>[Heeger 2019, Heeger 2020]</cite> with \(n\) neurons of each type can be written as,
+            </p>
+            <p>
+                \[
+                \begin{split}
+                    \boldsymbol{\tau}_y \odot \dot{\mathbf{y}} &= -\mathbf{y} + \mathbf{b} \odot \mathbf{z} 
+                    + \left(\mathbf{1} - \mathbf{a}^{+}\right) \odot \mathbf{W}_r 
+                    \left(\sqrt{\mathbf{y}^+} - \sqrt{\mathbf{y}^-}\right) \\
+                    \boldsymbol{\tau}_a \odot \dot{\mathbf{a}} &= -\mathbf{a} + \mathbf{b}_0^2 \odot \boldsymbol{\sigma}^2 
+                    + \mathbf{W} \left(\left(\mathbf{y}^+ + \mathbf{y}^-\right) \odot \mathbf{a}^{+2}\right)
+                \end{split}
+                \]
+            </p>
+            <p>
+                where \(\mathbf{y} \in \mathbb{R}^n\) and \(\mathbf{a} \in \mathbb{R}^n\) are the membrane potentials 
+                (relative to an arbitrary threshold potential that we take to be \(0\)) of the excitatory (\(\mathbf{y}\)) 
+                and inhibitory (\(\mathbf{a}\)) neurons, evolving according to the dynamical equations defined above 
+                with \(\dot{\mathbf{y}}\) and \(\dot{\mathbf{a}}\) denoting the time derivatives. The notation 
+                \(\odot\) denotes element-wise multiplication of vectors, and squaring, rectification, square-root, 
+                and division are also performed element-wise. \(\mathbf{1}\) is an \(n\)-dimensional vector with all 
+                entries equal to 1. \(\mathbf{z} \in \mathbb{R}^n\) is the input drive to the circuit and is a 
+                weighted sum of the input, \(\mathbf{x} \in \mathbb{R}^m\), i.e., \(\mathbf{z} = \mathbf{W}_{zx} \mathbf{x}\).
+            </p>
+            <p>
+                The firing rates, \(\mathbf{y}^\pm = \lfloor\pm\mathbf{y}\rfloor^2\) and 
+                \(\mathbf{a}^+ = \sqrt{\lfloor\mathbf{a}\rfloor}\), are rectified (\(\lfloor .\rfloor\)) power 
+                functions of the underlying membrane potentials. For the derivation of a general model with 
+                arbitrary power-law exponents, including the Eq.~(1), see Appendix A. Note that the term 
+                \(\sqrt{\mathbf{y}^+} - \sqrt{\mathbf{y}^-}\) serves the purpose of defining a mechanism for 
+                reconstructing the membrane potential (which can be negative, depending on the sign of the input) 
+                from the firing rates \(\mathbf{y}^\pm\) that are strictly nonnegative. \(\mathbf{y}^+\) and 
+                \(\mathbf{y}^-\) are the firing rates of neurons with complementary receptive fields such that 
+                they encode inputs with positive and negative signs, respectively. Note that only one of these 
+                neurons fires at a given time. In ORGaNICs, these neurons have a single dynamical equation for 
+                their membrane potentials, where the sign of \(\mathbf{y}\) indicates which neuron is active. 
+                Neurons with such complementary (anti-phase) receptive fields are found adjacent to each other 
+                in the visual cortex <cite>[Liu 1992]</cite>, and we hypothesize that such complementary neurons 
+                are ubiquitous throughout the neocortex.
+            </p>
+            <p>
+                \(\mathbf{b} \in {\mathbb{R}^+_*}^n\) and \(\mathbf{b}_0 \in {\mathbb{R}^+_*}^n\) are the input gains 
+                for the external inputs \(\mathbf{z}\) and \(\boldsymbol{\sigma}\) fed to neurons \(\mathbf{y}\) 
+                and \(\mathbf{a}\), respectively. \({\mathbb{R}^+_*}\) is the set of positive real numbers, 
+                \(\{x \in \mathbb{R} \, | \,  x > 0\}\). \(\boldsymbol{\sigma} \in {\mathbb{R}^+_*}^n\) determines 
+                the semisaturation of the responses of neurons \(\mathbf{y}\) by contributing to the depolarization 
+                of neurons \(\mathbf{a}\). \(\boldsymbol{\tau}_y \in {\mathbb{R}^+_*}^n\) and 
+                \(\boldsymbol{\tau}_a \in {\mathbb{R}^+_*}^n\) represent the time constants of \(\mathbf{y}\) and 
+                \(\mathbf{a}\) neurons.
             </p>
         </section>
 
