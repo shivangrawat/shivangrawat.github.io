@@ -36,56 +36,65 @@ header {
     text-align: center;
 }
 
+/* Styling for Button Links */
 .links {
     margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
 }
 
 .links button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin: 5px;
-    padding: 10px 15px;
+    padding: 10px 20px;
     font-size: 0.9em;
     font-weight: bold;
     border: none;
     border-radius: 5px;
-    background: #007acc;
     color: #fff;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .links button:hover {
-    background: #005b99;
+    transform: translateY(-2px);
 }
 
+.arxiv-button {
+    background: #ff6f61; /* ArXiv color */
+}
+
+.arxiv-button:hover {
+    background: #e65c50;
+}
+
+.github-button {
+    background: #24292e; /* GitHub black */
+}
+
+.github-button:hover {
+    background: #1d2227;
+}
+
+.poster-button {
+    background: #444444; /* Neutral black for poster */
+}
+
+.poster-button:hover {
+    background: #5a5a5a;
+}
+
+/* Icons inside Buttons */
 .links button .icon {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     margin-right: 8px;
+    object-fit: contain; /* Ensures the image scales nicely */
+    border: none; /* Ensures no unwanted borders */
 }
 
-.links button i {
-    margin-right: 8px;
-    font-size: 1.2em;
-}
-
-.links button:nth-child(1) {
-    background: #ff6600; /* ArXiv orange */
-}
-
-.links button:nth-child(1):hover {
-    background: #cc5200;
-}
-
-.links button:nth-child(3) {
-    background: #333; /* Black for poster */
-}
-
-.links button:nth-child(3):hover {
-    background: #555;
-}
 
 
 /* Navigation Bar */
