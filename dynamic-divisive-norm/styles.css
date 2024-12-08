@@ -75,7 +75,7 @@ header {
 
 /* ArXiv Button */
 .arxiv-button img {
-    width: 150px; /* Bigger size for the logo */
+    width: 100px; /* Bigger size for the logo */
     height: auto;
     border-radius: 5px;
     object-fit: contain;
@@ -83,26 +83,18 @@ header {
 
 /* GitHub Button */
 .github-button img {
-    width: 150px; /* Bigger size for the logo */
+    width: 100px; /* Bigger size for the logo */
     height: auto;
     border-radius: 5px;
     object-fit: contain;
 }
 
 /* Poster Button */
-.poster-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 15px 30px;
-    font-size: 1em;
-    font-weight: bold;
-    color: #000;
-    background: #fff; /* Always black background */
+.poster-button img {
+    width: 100px; /* Bigger size for the logo */
+    height: auto;
     border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.2s ease, background-color 0.3s ease;
+    object-fit: contain;
 }
 
 .poster-button:hover {
