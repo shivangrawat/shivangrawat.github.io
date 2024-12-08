@@ -25,14 +25,22 @@ header {
 
 .authors {
     margin: 0.2em 0;
-    font-weight: italic;
+    font-style: italic; /* Use font-style for italic instead of font-weight */
 }
 
+.authors strong {
+    font-style: normal; /* Ensure the strong tag doesn't affect the font style */
+}
 
 .affiliations {
     margin: 0.2em 0;
-    font-weight: normal;
+    font-style: normal; /* Explicitly set normal to override <em> */
 }
+
+.affiliations em {
+    font-style: normal; /* Override the inherent italic styling of <em> */
+}
+
 
 .author-link {
     text-decoration: none; /* Removes underline */
@@ -193,7 +201,7 @@ main h2 {
 
 .model-description img {
     display: block;
-    max-width: 40%; /* Ensures it scales responsively */
+    max-width: 30%; /* Ensures it scales responsively */
     height: auto; /* Maintains aspect ratio */
     margin: 0 auto;
     border: none; /* Optional: Adds a border */
