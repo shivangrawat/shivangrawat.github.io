@@ -209,6 +209,21 @@ main h2 {
     box-shadow: none; /* Removes any shadow effect */
 }
 
+.stability figure {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.stability img {
+    display: block;
+    max-width: 30%; /* Ensures it scales responsively */
+    height: auto; /* Maintains aspect ratio */
+    margin: 0 auto;
+    border: none; /* Optional: Adds a border */
+    outline: none; /* Removes any outline */
+    box-shadow: none; /* Removes any shadow effect */
+}
+
 
 .tl-dr, .abstract, .introduction, .model-description, .stability, .results, .discussion, .citation {
     margin-bottom: 2em;

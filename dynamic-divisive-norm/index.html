@@ -166,6 +166,47 @@
                 benchmarks can be accessed via the links provided above.</p>
         </section>
 
+        <section class="stability" id="stability">
+            <h2>Stability of ORGaNICs</h2>
+            <p>
+                The stability analysis of ORGaNICs with
+                all weights and inputs arbitrarily varying is intractable. Therefore, we consider two special cases and
+                empirically analyze the most general case.
+            </p>
+            <ul>
+                <li>
+                    <strong>High-dimensional ORGaNICs with identity recurrent weight matrix:</strong>
+                    <p>Under the constraint of \( \mathbf{W}_r = \mathbf{I} \), ORGaNICs exhibit the remarkable property
+                        of unconditional, independent of model parameters and input, local asymptotic stability of the normalization fixed point. </p>
+                    <figure>
+                        <img src="figures/wr_identity.png" alt="Stability for identity recurrent weight matrix">
+                    </figure>
+                </li>
+                <li>
+                    <strong>Two-dimensional ORGaNICs:</strong>
+                    <p>For 2D ORGaNICs with one excitatory and one inhibitory neuron, we prove the existence of an
+                        asymptotically stable fixed point under unconstrained parameters and inputs.</p>
+                    <figure>
+                        <img src="figures/main_fig.png" alt="Stability for 2D ORGaNICs">
+                    </figure>
+                </li>
+                <li>
+                    <strong>General high-dimensional ORGaNICs:</strong>
+                    <p>
+                        We conjecture that an asymptotically stable fixed point always exists for ORGaNICs circuits when
+                        \( ||\mathbf{z}|| \leq 1 \) and the maximum singular value of \( \mathbf{W}_r \) is 1. Empirical
+                        evidence supports this conjecture, as stability was observed in 100% of trials. Additionally,
+                        100% stability was observed when increasing the constraint on the maximum singular value of \(
+                        \mathbf{W}_r \) to 2, but this breaks down at a value of 3. 
+                    </p>
+                    <figure>
+                        <img src="figures/wr_not_identity.png"
+                            alt="General high-dimensional ORGaNICs stability">
+                    </figure>
+                </li>
+            </ul>
+        </section>
+
         <section class="results" id="results">
             <h2>Results</h2>
             <p>We empirically validate the unconditional stability property of the ORGaNICs framework by testing it on a
