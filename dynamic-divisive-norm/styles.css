@@ -15,6 +15,9 @@ header {
     border-bottom: 1px solid #ddd;
 }
 
+
+
+
 .paper-title {
     font-family: 'Merriweather', serif;
     font-size: 2em;
@@ -282,7 +285,7 @@ footer {
 }
 
 /* Responsive Design */
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
     header, main, footer, nav ul {
         padding: 10px;
     }
@@ -292,6 +295,23 @@ footer {
     nav ul {
         flex-direction: column;
         align-items: center;
+    }
+} */
+
+main {
+    max-width: 800px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 20px;  /* Add padding to create space on both sides */
+    border-radius: 5px;
+    overflow-x: auto;  /* Allow horizontal scrolling if content overflows */
+}
+
+/* For very small screens, reduce margin and slightly reduce padding to maintain usability */
+@media (max-width: 600px) {
+    main {
+        margin: 20px;
+        padding: 15px;
     }
 }
 
