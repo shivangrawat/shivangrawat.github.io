@@ -192,15 +192,16 @@
                     <p>Under the constraint of \( \mathbf{W}_r = \mathbf{I} \), ORGaNICs exhibit the remarkable property
                         of unconditional, independent of model parameters and input, local asymptotic stability of the normalization fixed point. </p>
                     <figure>
-                        <img src="figures/wr_identity.png" alt="Stability for identity recurrent weight matrix">
+                        <img id="identity" src="figures/wr_identity.png" alt="Stability for identity recurrent weight matrix">
                     </figure>
                 </li>
                 <li>
                     <strong>Two-dimensional ORGaNICs:</strong>
                     <p>For 2D ORGaNICs with one excitatory and one inhibitory neuron, we prove the existence of an
-                        asymptotically stable fixed point under unconstrained parameters and inputs.</p>
+                        asymptotically stable fixed point under unconstrained parameters and inputs. The phase portrait changes as 
+                    the recurrent scalar \(w_r\) is changed from \(0\) to \(\infty\)</p>
                     <figure>
-                        <img src="figures/main_fig.png" alt="Stability for 2D ORGaNICs">
+                        <img id="2d" src="figures/main_fig.png" alt="Stability for 2D ORGaNICs">
                     </figure>
                 </li>
                 <li>
@@ -208,12 +209,12 @@
                     <p>
                         We conjecture that an asymptotically stable fixed point always exists for ORGaNICs circuits when
                         \( ||\mathbf{z}|| \leq 1 \) and the maximum singular value of \( \mathbf{W}_r \) is 1. Empirical
-                        evidence supports this conjecture, as stability was observed in 100% of trials. Additionally,
+                        evidence (see below) supports this conjecture, as stability was observed in 100% of trials. Additionally,
                         100% stability was observed when increasing the constraint on the maximum singular value of \(
                         \mathbf{W}_r \) to 2, but this breaks down at a value of 3. 
                     </p>
                     <figure>
-                        <img src="figures/wr_not_identity.png"
+                        <img id="wr_not_identity" src="figures/wr_not_identity.png"
                             alt="General high-dimensional ORGaNICs stability">
                     </figure>
                 </li>

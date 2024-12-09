@@ -209,19 +209,17 @@ main h2 {
     box-shadow: none; /* Removes any shadow effect */
 }
 
-.stability figure {
-    text-align: center;
-    margin: 20px auto;
+.stability figure img {
+    width: 60%; /* Default width for images */
 }
-
-.stability img {
-    display: block;
-    max-width: 30%; /* Ensures it scales responsively */
-    height: auto; /* Maintains aspect ratio */
-    margin: 0 auto;
-    border: none; /* Optional: Adds a border */
-    outline: none; /* Removes any outline */
-    box-shadow: none; /* Removes any shadow effect */
+.stability figure img#identity {
+    width: 60%; /* Specific size for identity recurrent weight matrix image */
+}
+.stability figure img#2d {
+    width: 80%; /* Specific size for 2D ORGaNICs image */
+}
+.stability figure img#wr_not_identity {
+    width: 35%; /* Specific size for general high-dimensional ORGaNICs image */
 }
 
 
