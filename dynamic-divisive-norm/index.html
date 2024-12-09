@@ -258,14 +258,31 @@
         </section>
 
         <section class="results" id="results">
-            <h2>Results</h2>
-            <p>We empirically validate the unconditional stability property of the ORGaNICs framework by testing it on a
-                range of tasks, including static image classification and sequential MNIST. The model not only avoids
-                exploding and vanishing gradients, but also achieves competitive performance with LSTMs on sequential
-                tasks. Visualizations of the circuit’s energy function demonstrate how the model maintains stable
-                attractors, offering interpretable dynamics that align with biological principles. Additional figures
-                and
-                benchmarks can be accessed via the links provided above.</p>
+            <h2>Classification experiments</h2>
+            <p>To show the trainability of ORGaNICs using vanilla backpropagation, without using specialized techniques
+                like gradient clipping/scaling, we train it on two classification tasks,</p>
+            <ul>
+                <li>
+                    <strong>Static input classification:</strong> 
+                    <p>ORGaNICs were trained on the MNIST dataset with static
+                    inputs.
+                    The model achieved test accuracies comparable to state-of-the-art models, confirming its robustness
+                    and ability to handle steady-state inputs effectively.</p>
+                    <figure>
+                        <img id="mnist" src="figures/mnist_table.png" alt="MNIST table">
+                    </figure>
+                </li>
+                <li>
+                    <strong>Time-varying input classification:</strong> 
+                    <p>ORGaNICs were evaluated on sequential MNIST
+                    (sMNIST) and permuted sMNIST tasks,
+                    involving long-term dependencies. The model demonstrated stability and competitive performance, with
+                    no need for gradient clipping or scaling during training.</p>
+                    <figure>
+                        <img id="smnist" src="figures/smnist_table.png" alt="sMNIST table">
+                    </figure>
+                </li>
+            </ul>
         </section>
 
         <section class="discussion" id="discussion">
