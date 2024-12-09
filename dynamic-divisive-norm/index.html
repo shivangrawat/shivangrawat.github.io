@@ -237,6 +237,26 @@
             </ul>
         </section>
 
+        <section class="energy" id="energy">
+            <h2>Interpretability</h2>
+            <p>Since we followed a direct Lyapunov approach to prove the stability of ORGaNICs when
+                \(\mathbf{W}=\mathbf{I}\), we have access to the energy of ORGaNICs</p>
+            <figure>
+                <img src="figures/energy.png" alt="Energy function">
+            </figure>
+            <p>
+                This result demonstrates that ORGaNICs minimize the residual of the instantaneously reconstructed gated
+                input drive \(\sqrt{a}_i y_i - b_i z_i\), while also ensuring that the principal neuron's response,
+                \(y_i\),
+                achieves DN. The balance between these objectives is governed by the parameters and the external input
+                strength. With fixed parameters, weaker inputs, \(z_i\), cause the model to prioritize input matching
+                over
+                normalization, whereas stronger inputs increasingly engage the normalization objective. Therefore, we
+                have a normative principle of what the circuit, and
+                individual neurons, aim to accomplish.
+            </p>
+        </section>
+
         <section class="results" id="results">
             <h2>Results</h2>
             <p>We empirically validate the unconditional stability property of the ORGaNICs framework by testing it on a
