@@ -153,6 +153,19 @@
                 \(\boldsymbol{\tau}_a \in {\mathbb{R}^+_*}^n\) represent the time constants of \(\mathbf{y}\) and
                 \(\mathbf{a}\) neurons.
             </p>
+            <p>
+                The differential equations are designed in such a way that when \(\mathbf{W}_r = \mathbf{I}\) and 
+                \(\mathbf{b} = \mathbf{b}_0\) (i.e., with all elements equal to a constant \(b_0\)), the principal neurons 
+                follow the normalization equation exactly (and approximately when \(\mathbf{W}_r \neq \mathbf{I}\)) 
+                at steady-state:
+            </p>
+            <p>
+                \[
+                \mathbf{y}^+_s \equiv \lfloor \mathbf{y}_s \rfloor^2 = 
+                \frac{\lfloor \mathbf{z} \rfloor^2}{\boldsymbol{\sigma}^2 + 
+                \mathbf{W} \left(\lfloor \mathbf{z} \rfloor^2 + \lfloor -\mathbf{z} \rfloor^2\right)}.
+                \]
+            </p>
         </section>
 
         <section class="stability" id="stability">
