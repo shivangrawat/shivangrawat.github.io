@@ -154,29 +154,41 @@
                 \(\mathbf{a}\) neurons.
             </p>
             <p>
-                The differential equations are designed in such a way that when \(\mathbf{W}_r = \mathbf{I}\) and 
-                \(\mathbf{b} = \mathbf{b}_0\) (i.e., with all elements equal to a constant \(b_0\)), the principal neurons 
-                follow the normalization equation exactly (and approximately when \(\mathbf{W}_r \neq \mathbf{I}\)) 
+                The differential equations are designed in such a way that when \(\mathbf{W}_r = \mathbf{I}\) and
+                \(\mathbf{b} = \mathbf{b}_0\) (i.e., with all elements equal to a constant \(b_0\)), the principal
+                neurons
+                follow the normalization equation exactly (and approximately when \(\mathbf{W}_r \neq \mathbf{I}\))
                 at steady-state:
             </p>
             <p>
                 \[
-                \mathbf{y}^+_s \equiv \lfloor \mathbf{y}_s \rfloor^2 = 
-                \frac{\lfloor \mathbf{z} \rfloor^2}{\boldsymbol{\sigma}^2 + 
+                \mathbf{y}^+_s \equiv \lfloor \mathbf{y}_s \rfloor^2 =
+                \frac{\lfloor \mathbf{z} \rfloor^2}{\boldsymbol{\sigma}^2 +
                 \mathbf{W} \left(\lfloor \mathbf{z} \rfloor^2 + \lfloor -\mathbf{z} \rfloor^2\right)}.
                 \]
             </p>
         </section>
 
-        <section class="stability" id="stability">
-            <h2>Stability of ORGaNICs</h2>
-            <p>We empirically validate the unconditional stability property of the ORGaNICs framework by testing it on a
-                range of tasks, including static image classification and sequential MNIST. The model not only avoids
-                exploding and vanishing gradients, but also achieves competitive performance with LSTMs on sequential
-                tasks. Visualizations of the circuit’s energy function demonstrate how the model maintains stable
-                attractors, offering interpretable dynamics that align with biological principles. Additional figures
-                and
-                benchmarks can be accessed via the links provided above.</p>
+        <section class="divise-norm" id="divise-norm">
+            <h2>Divisive normalization</h2>
+            <figure>
+                <img src="figures/divisive_normalization.png" alt="Divisive normalization">
+            </figure>
+            <p>Divisive normalization (DN) [Carandini & Heeger 2012] is a canonical neural computation proposed to
+                explain the responses of
+                neurons in the primary visual cortex (V1) and has since been generalized to model a wide variety of
+                cognitive and neural processes. At its core, DN operates by dividing each neuron’s response by a
+                weighted sum of the activity of a pool of neurons, akin to normalizing the length of a vector. This
+                mechanism underlies various neural phenomena such as adaptation, attention, automatic gain control,
+                decorrelation, and statistical whitening. DN's broad applicability extends across neurophysiological and
+                psychophysical phenomena, including responses to sensory stimuli, competitive interactions in attention,
+                and mechanisms of gain control. In addition to its biological significance, DN has parallels in
+                artificial neural networks, generalizing normalization techniques like batch and layer normalization.
+                Models leveraging DN have shown superior performance in machine learning tasks, highlighting its dual
+                relevance in neuroscience and artificial intelligence. DN's ability to ensure stability, enhance
+                trainability, and robustly explain neurophysiological observations suggests that it should be a
+                foundational element of any neurodynamical model, offering a principled basis for understanding and
+                simulating cortical computations.</p>
         </section>
 
         <section class="stability" id="stability">
@@ -190,16 +202,19 @@
                 <li>
                     <strong>High-dimensional ORGaNICs with identity recurrent weight matrix:</strong>
                     <p>Under the constraint of \( \mathbf{W}_r = \mathbf{I} \), ORGaNICs exhibit the remarkable property
-                        of unconditional, independent of model parameters and input, local asymptotic stability of the normalization fixed point. </p>
+                        of unconditional, independent of model parameters and input, local asymptotic stability of the
+                        normalization fixed point. </p>
                     <figure>
-                        <img id="identity" src="figures/wr_identity.png" alt="Stability for identity recurrent weight matrix">
+                        <img id="identity" src="figures/wr_identity.png"
+                            alt="Stability for identity recurrent weight matrix">
                     </figure>
                 </li>
                 <li>
                     <strong>Two-dimensional ORGaNICs:</strong>
                     <p>For 2D ORGaNICs with one excitatory and one inhibitory neuron, we prove the existence of an
-                        asymptotically stable fixed point under unconstrained parameters and inputs. The phase portrait changes as 
-                    the recurrent scalar \(w_r\) is changed from \(0\) to \(\infty\)</p>
+                        asymptotically stable fixed point under unconstrained parameters and inputs. The phase portrait
+                        changes as
+                        the recurrent scalar \(w_r\) is changed from \(0\) to \(\infty\). </p>
                     <figure>
                         <img id="2d" src="figures/main_fig.png" alt="Stability for 2D ORGaNICs">
                     </figure>
@@ -209,9 +224,10 @@
                     <p>
                         We conjecture that an asymptotically stable fixed point always exists for ORGaNICs circuits when
                         \( ||\mathbf{z}|| \leq 1 \) and the maximum singular value of \( \mathbf{W}_r \) is 1. Empirical
-                        evidence (see below) supports this conjecture, as stability was observed in 100% of trials. Additionally,
+                        evidence (see below) supports this conjecture, as stability was observed in 100% of trials.
+                        Additionally,
                         100% stability was observed when increasing the constraint on the maximum singular value of \(
-                        \mathbf{W}_r \) to 2, but this breaks down at a value of 3. 
+                        \mathbf{W}_r \) to 2, but this breaks down at a value of 3.
                     </p>
                     <figure>
                         <img id="wr_not_identity" src="figures/wr_not_identity.png"

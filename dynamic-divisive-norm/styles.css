@@ -227,8 +227,17 @@ main h2 {
     width: 50%; /* Specific size for general high-dimensional ORGaNICs image */
 }
 
+.divise-norm figure {
+    text-align: center;
+    margin: 20px auto;
+}
 
-.tl-dr, .abstract, .introduction, .model-description, .stability, .results, .discussion, .citation {
+.divise-norm figure img {
+    width: 100%; /* Default width for images */
+}
+
+
+.tl-dr, .abstract, .introduction, .model-description, .stability, .divise-norm, .results, .discussion, .citation {
     margin-bottom: 2em;
 }
 
