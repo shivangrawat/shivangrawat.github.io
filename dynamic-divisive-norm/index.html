@@ -263,21 +263,20 @@
                 like gradient clipping/scaling, we train it on two classification tasks,</p>
             <ul>
                 <li>
-                    <strong>Static input classification:</strong> 
+                    <strong>Static input classification:</strong>
                     <p>ORGaNICs were trained on the MNIST dataset with static
-                    inputs.
-                    The model achieved test accuracies comparable to state-of-the-art models, confirming its robustness
-                    and ability to handle steady-state inputs effectively.</p>
+                        inputs.
+                        The model achieved test accuracies better than state-of-the-art neurodynamical model.</p>
                     <figure>
                         <img id="mnist" src="figures/mnist_table.png" alt="MNIST table">
                     </figure>
                 </li>
                 <li>
-                    <strong>Time-varying input classification:</strong> 
+                    <strong>Time-varying input classification:</strong>
                     <p>ORGaNICs were evaluated on sequential MNIST
-                    (sMNIST) and permuted sMNIST tasks,
-                    involving long-term dependencies. The model demonstrated stability and competitive performance, with
-                    no need for gradient clipping or scaling during training.</p>
+                        (sMNIST) and permuted sMNIST tasks,
+                        involving long-term dependencies. The model demonstrated stability and competitive performance,
+                        and can be trained with backpropagation through time (BPTT) without gradient clipping.</p>
                     <figure>
                         <img id="smnist" src="figures/smnist_table.png" alt="sMNIST table">
                     </figure>
