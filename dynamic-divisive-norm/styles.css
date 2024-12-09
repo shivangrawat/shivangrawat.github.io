@@ -209,6 +209,11 @@ main h2 {
     box-shadow: none; /* Removes any shadow effect */
 }
 
+.stability figure {
+    text-align: center;
+    margin: 20px auto;
+}
+
 .stability figure img {
     width: 60%; /* Default width for images */
 }
