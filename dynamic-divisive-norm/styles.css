@@ -1,11 +1,23 @@
-body {
+/* body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     color: #333;
     background: linear-gradient(to bottom, #fafafa, #e9ecef);
+} */
+
+body {
+    margin: 0;
+    padding: 0 10px; /* Add horizontal padding to body for small screens */
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(to bottom, #fafafa, #e9ecef);
+    max-width: 100%;
+    overflow-x: hidden; /* Prevent body-level overflow */
 }
+
 
 /* Header */
 header {
