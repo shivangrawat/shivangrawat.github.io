@@ -28,6 +28,11 @@ header {
 }
 
 
+.equation-container {
+    overflow-x: auto; 
+    max-width: 100%;
+    padding-bottom: 10px; /* Optional for some extra spacing below */
+}
 
 
 .paper-title {

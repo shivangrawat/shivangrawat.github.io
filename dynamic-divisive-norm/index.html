@@ -120,17 +120,20 @@
             <p>
                 The two-neuron-types ORGaNICs model with \(n\) neurons of each type can be written as,
             </p>
-            <p>
-                \[
-                \begin{split}
-                \boldsymbol{\tau}_y \odot \dot{\mathbf{y}} &= -\mathbf{y} + \mathbf{b} \odot \mathbf{z}
-                + \left(\mathbf{1} - \mathbf{a}^{+}\right) \odot \mathbf{W}_r
-                \left(\sqrt{\mathbf{y}^+} - \sqrt{\mathbf{y}^-}\right) \\
-                \boldsymbol{\tau}_a \odot \dot{\mathbf{a}} &= -\mathbf{a} + \mathbf{b}_0^2 \odot \boldsymbol{\sigma}^2
-                + \mathbf{W} \left(\left(\mathbf{y}^+ + \mathbf{y}^-\right) \odot \mathbf{a}^{+2}\right)
-                \end{split}
-                \]
-            </p>
+            <div class="equation-container">
+                <p>
+                    \[
+                    \begin{split}
+                    \boldsymbol{\tau}_y \odot \dot{\mathbf{y}} &= -\mathbf{y} + \mathbf{b} \odot \mathbf{z}
+                    + \left(\mathbf{1} - \mathbf{a}^{+}\right) \odot \mathbf{W}_r
+                    \left(\sqrt{\mathbf{y}^+} - \sqrt{\mathbf{y}^-}\right) \\
+                    \boldsymbol{\tau}_a \odot \dot{\mathbf{a}} &= -\mathbf{a} + \mathbf{b}_0^2 \odot \boldsymbol{\sigma}^2
+                    + \mathbf{W} \left(\left(\mathbf{y}^+ + \mathbf{y}^-\right) \odot \mathbf{a}^{+2}\right)
+                    \end{split}
+                    \]
+                </p>
+            </div>
+            
             <p>
                 where \(\mathbf{y} \in \mathbb{R}^n\) and \(\mathbf{a} \in \mathbb{R}^n\) are the membrane potentials
                 (relative to an arbitrary threshold potential that we take to be \(0\)) of the excitatory
@@ -160,13 +163,15 @@
                 follow the normalization equation exactly (and approximately when \(\mathbf{W}_r \neq \mathbf{I}\))
                 at steady-state:
             </p>
-            <p>
-                \[
-                \mathbf{y}^+_s \equiv \lfloor \mathbf{y}_s \rfloor^2 =
-                \frac{\lfloor \mathbf{z} \rfloor^2}{\boldsymbol{\sigma}^2 +
-                \mathbf{W} \left(\lfloor \mathbf{z} \rfloor^2 + \lfloor -\mathbf{z} \rfloor^2\right)}.
-                \]
-            </p>
+            <div class="equation-container">
+                <p>
+                    \[
+                    \mathbf{y}^+_s \equiv \lfloor \mathbf{y}_s \rfloor^2 =
+                    \frac{\lfloor \mathbf{z} \rfloor^2}{\boldsymbol{\sigma}^2 +
+                    \mathbf{W} \left(\lfloor \mathbf{z} \rfloor^2 + \lfloor -\mathbf{z} \rfloor^2\right)}.
+                    \]
+                </p>
+            </div>
         </section>
 
         <section class="divise-norm" id="divise-norm">
